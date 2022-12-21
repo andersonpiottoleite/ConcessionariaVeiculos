@@ -12,10 +12,24 @@ public class TesteCarro {
         carro1.estiloDeCombustivel = "Gasolina";
         carro1.motor = "Mercedes Bens 204 Cavalos";
         carro1.preco = 370000.00;
+        carro1.velocidadeMaxima = 220;
 
+        System.out.println(carro1.obterVelocidadeMaxima());
+        carro1.ligar();
+        carro1.acelerar(100);
         System.out.println(carro1);
 
-        Carro carro2 = new Carro();
+        carro1.acelerar(20);
+        System.out.println(carro1);
+
+        carro1.desacelerar(50);
+        System.out.println(carro1);
+
+        carro1.morrer();
+        System.out.println(carro1);
+
+
+        /*Carro carro2 = new Carro();
         carro2.marca = "FIAT";
         carro2.modelo = "UNO";
         carro2.cor = "AZUL";
@@ -27,7 +41,7 @@ public class TesteCarro {
         carro2.motor = "8 valvulas";
         carro2.preco = 5000.00;
 
-        System.out.println(carro2);
+        System.out.println(carro2);*/
 
     }
 }
