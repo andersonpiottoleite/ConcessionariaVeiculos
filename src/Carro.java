@@ -16,7 +16,7 @@ class Carro {
     int velocidadeAtual;
 
     // metodos, é o que toda classe FAZ
-    int obterVelocidadeMaxima(String s){
+    int obterVelocidadeMaxima(){
         // logica da minha tarefa/metodo
         return velocidadeMaxima;
     }
