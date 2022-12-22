@@ -1,8 +1,7 @@
 public class TesteCarro {
 
     public static void main(String[] args) {
-        Carro carro1 = new Carro();
-        carro1.marca = "Mercedes";
+        Carro carro1 = new Carro(EnumMarca.MERCEDES);
         carro1.modelo = "Sedan";
         carro1.cor = "Prata";
         carro1.numeroDeRodas = 5;
@@ -28,7 +27,6 @@ public class TesteCarro {
         carro1.morrer();
         System.out.println(carro1);
 
-
         /*Carro carro2 = new Carro();
         carro2.marca = "FIAT";
         carro2.modelo = "UNO";
@@ -42,6 +40,5 @@ public class TesteCarro {
         carro2.preco = 5000.00;
 
         System.out.println(carro2);*/
-
     }
 }

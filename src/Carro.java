@@ -1,11 +1,25 @@
+import java.util.Calendar;
+import java.util.Objects;
+
 class Carro {
+
+    Carro(){ // default
+
+    }
+
+
+    Carro(EnumMarca marca){ // construtor de classe
+        this.marca = marca; // sombreamento
+    }
 
     // atributos é o que uma classe TEM:
     String motor;
     int numeroDeRodas;
     int anoDeFabricao;
     String cor;
-    String marca;
+
+    EnumMarca marca;
+
     String modelo;
     String estiloDeCombustivel;
     double preco;
@@ -29,8 +43,13 @@ class Carro {
         return numeroParseado;
     }
 
-    void ligar(){
-        System.out.println("Carro ligado...");
+    void ligar(){ // sobrecarga de metodos
+        System.out.println("Carro ligado com chave...");
+    }
+
+    void ligar(String comandoDeVoz){ // sobrecarga de metodos
+        System.out.println("Carro ligado com comando de voz..." + comandoDeVoz);
+        String.valueOf(1);
     }
 
     void acelerar(int aumentoDeVelocidade){
@@ -54,10 +73,6 @@ class Carro {
         }
         System.out.println("Carro parado!");
     }
-
-
-
-
 
     @Override
     public String toString() {
