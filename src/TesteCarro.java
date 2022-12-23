@@ -1,3 +1,6 @@
+import java.util.Calendar;
+import java.util.Locale;
+
 public class TesteCarro {
 
     public static void main(String[] args) {
@@ -40,5 +43,10 @@ public class TesteCarro {
         carro2.preco = 5000.00;
 
         System.out.println(carro2);*/
+
+        /*Locale local = new Locale("en-US");
+        Calendar instance = Calendar.getInstance(local);
+        System.out.println(instance);
+        System.out.println(instance.getTime());*/
     }
 }

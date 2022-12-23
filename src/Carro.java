@@ -4,11 +4,12 @@ import java.util.Objects;
 class Carro {
 
     Carro(){ // default
-
+        desengatar();
     }
 
 
     Carro(EnumMarca marca){ // construtor de classe
+        desengatar();
         this.marca = marca; // sombreamento
     }
 
@@ -28,6 +29,10 @@ class Carro {
     int velocidadeMaxima;
 
     int velocidadeAtual;
+
+    void acelerar(int aumentoDeVelocidade){
+        int i = velocidadeAtual + aumentoDeVelocidade;
+    }
 
     // metodos, é o que toda classe FAZ
     int obterVelocidadeMaxima(){
@@ -49,12 +54,6 @@ class Carro {
 
     void ligar(String comandoDeVoz){ // sobrecarga de metodos
         System.out.println("Carro ligado com comando de voz..." + comandoDeVoz);
-        String.valueOf(1);
-    }
-
-    void acelerar(int aumentoDeVelocidade){
-        //100 = (80 + 20);
-        velocidadeAtual += aumentoDeVelocidade;
     }
 
     void desacelerar(int diminuicaoDeVelocidade){
@@ -72,6 +71,10 @@ class Carro {
             desacelerar(velocidadeAtual);
         }
         System.out.println("Carro parado!");
+    }
+
+    void desengatar(){
+        System.out.println("Carro desengatado");
     }
 
     @Override
