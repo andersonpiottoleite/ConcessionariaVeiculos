@@ -5,16 +5,19 @@ public class TesteCarro {
 
     public static void main(String[] args) {
         Carro carro1 = new Carro(EnumMarca.MERCEDES);
-        carro1.modelo = "Sedan";
-        carro1.cor = "Prata";
-        carro1.numeroDeRodas = 5;
-        carro1.aroRoda = 18;
-        carro1.anoDeFabricao = 2022;
-        carro1.dono = "Renato Anderson";
-        carro1.estiloDeCombustivel = "Gasolina";
-        carro1.motor = "Mercedes Bens 204 Cavalos";
-        carro1.preco = 370000.00;
-        carro1.velocidadeMaxima = 220;
+
+        carro1.setModelo("Sedan");
+        carro1.setCor("Prata");
+        carro1.setNumeroDeRodas(4);
+        carro1.setAroRoda(18);
+        carro1.setAnoDeFabricao(2022);
+        carro1.setDono("Renato Anderson");
+        carro1.setEstiloDeCombustivel("Gasolina");
+        carro1.setMotor("16 Valvulas");
+        carro1.setPreco(370000.00);
+        carro1.setVelocidadeMaxima(220);
+
+        System.out.println(carro1.getNumeroDeRodas());
 
         System.out.println(carro1.obterVelocidadeMaxima());
         carro1.ligar();
