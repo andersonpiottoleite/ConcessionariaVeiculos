@@ -1,7 +1,7 @@
 import java.util.Calendar;
 import java.util.Objects;
 
-class Carro {
+class Carro extends Object{
 
     Carro(){ // default
         desengatar();
