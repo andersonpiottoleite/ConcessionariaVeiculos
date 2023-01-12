@@ -31,7 +31,7 @@ public class TesteMoto {
         // 2 - respeitar a ordem dos tipos -> X
         // 3 - temos memoria curta, acabamos esqucendo a que se refere cada valor informado -> X
         // 4 - usando o set, se torna verboso -> X
-        Moto moto3 = new Moto.MotoBuilder()
+        Moto moto3 = new MotoBuilder()
                 .escapamento("Tunado")
                 .preco(20_000.00)
                 .marca("CBR500")
