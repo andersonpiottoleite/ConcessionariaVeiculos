@@ -1,15 +1,18 @@
-import java.util.Calendar;
-import java.util.Objects;
+package br.com.localiza.concessionaria.modelo;
 
-class Carro extends Object{
+
+import br.com.localiza.concessionaria.enumerador.EnumMarca;
+
+// private - só permite que construtores, ou metodos, sejam acessados na mesma classe
+// default - só permite que classes, construtores, ou metodos, sejam acessados no mesmo pacote
+// public - permite que classes, construtores, ou metodos, sejam acessados em qualquer pacote
+// classes no pacote default (mesmo se as classes foram publicas), não podem ser acessadas fora do pacote default
+public class Carro {
 
     Carro(){ // default
-        desengatar();
+        System.out.println("Chamando constutor default");
     }
-
-
-    Carro(EnumMarca marca){ // construtor de classe
-        desengatar();
+    public Carro(EnumMarca marca){ // construtor de classe]
         this.marca = marca; // sombreamento
     }
 
@@ -30,12 +33,12 @@ class Carro extends Object{
 
     private int velocidadeAtual;
 
-    void acelerar(int aumentoDeVelocidade){
+    public void acelerar(int aumentoDeVelocidade){
         int i = velocidadeAtual + aumentoDeVelocidade;
     }
 
     // metodos, é o que toda classe FAZ
-    int obterVelocidadeMaxima(){
+    public int obterVelocidadeMaxima(){
         // logica da minha tarefa/metodo
         return velocidadeMaxima;
     }
@@ -52,33 +55,33 @@ class Carro extends Object{
         Integer i2 = Integer.valueOf(1);
     }
 
-    void ligar(){ // sobrecarga de metodos
-        System.out.println("Carro ligado com chave...");
+    public void ligar(){ // sobrecarga de metodos
+        System.out.println("br.com.localiza.concessionaria.modelo.Carro ligado com chave...");
     }
 
-    void ligar(String comandoDeVoz){ // sobrecarga de metodos
-        System.out.println("Carro ligado com comando de voz..." + comandoDeVoz);
+    public void ligar(String comandoDeVoz){ // sobrecarga de metodos
+        System.out.println("br.com.localiza.concessionaria.modelo.Carro ligado com comando de voz..." + comandoDeVoz);
     }
 
-    void desacelerar(int diminuicaoDeVelocidade){
+    public void desacelerar(int diminuicaoDeVelocidade){
         //60 = (80 - 20);
         velocidadeAtual -= diminuicaoDeVelocidade;
     }
 
-    void morrer(){
+    public void morrer(){
         System.out.println("Faltou gasolina...");
         desacelerar(velocidadeAtual);
         parar();
     }
-    void parar(){
+    public void parar(){
         if(velocidadeAtual > 0){
             desacelerar(velocidadeAtual);
         }
-        System.out.println("Carro parado!");
+        System.out.println("br.com.localiza.concessionaria.modelo.Carro parado!");
     }
 
-    void desengatar(){
-        System.out.println("Carro desengatado");
+    public void desengatar(){
+        System.out.println("br.com.localiza.concessionaria.modelo.Carro desengatado");
     }
 
     // metodo configurador cujo nome padrão é setXXX
@@ -184,7 +187,7 @@ class Carro extends Object{
 
     @Override
     public String toString() {
-        return "Carro{" +
+        return "br.com.localiza.concessionaria.modelo.Carro{" +
                 "motor='" + motor + '\'' +
                 ", numeroDeRodas=" + numeroDeRodas +
                 ", anoDeFabricao=" + anoDeFabricao +

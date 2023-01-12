@@ -1,3 +1,5 @@
+import br.com.localiza.concessionaria.modelo.Moto;
+
 public class MotoBuilder {
 
     private String cor;

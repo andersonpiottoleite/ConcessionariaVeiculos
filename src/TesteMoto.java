@@ -1,3 +1,7 @@
+import br.com.localiza.concessionaria.modelo.Moto;
+
+import java.util.List;
+
 public class TesteMoto {
 
     public static void main(String[] args) {
@@ -27,7 +31,7 @@ public class TesteMoto {
         // 2 - respeitar a ordem dos tipos -> X
         // 3 - temos memoria curta, acabamos esqucendo a que se refere cada valor informado -> X
         // 4 - usando o set, se torna verboso -> X
-        Moto moto3 = new MotoBuilder()
+        Moto moto3 = new Moto.MotoBuilder()
                 .escapamento("Tunado")
                 .preco(20_000.00)
                 .marca("CBR500")
@@ -38,7 +42,17 @@ public class TesteMoto {
                 .modelo("Yamawha")
                 .build();
 
+        List<Moto> motos = List.of(moto3, moto3, moto3);
+        System.out.println(motos.size());
+
         System.out.println(moto3);
+
+        StringBuilder sb = new StringBuilder()
+                .append("palavra1 ")
+                .append("palavra 2")
+                .append("palavra 3")
+                .append("palavra 4");
+        System.out.println(sb.toString());
     }
 
 }

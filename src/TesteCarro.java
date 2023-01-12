@@ -1,12 +1,14 @@
+import br.com.localiza.concessionaria.enumerador.EnumMarca;
+import br.com.localiza.concessionaria.modelo.Carro;
+
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
-import java.util.Locale;
 
 public class TesteCarro {
 
     public static void main(String[] args) {
         Carro carro1 = new Carro(EnumMarca.MERCEDES);
+
         //carro1.numeroDeRodas = -50; // forte acoplamento, a classe TesteCarro sabe alem do que deveria saber sobre o carro
         carro1.setModelo("Sedan");
         carro1.setCor("Prata");
@@ -51,7 +53,7 @@ public class TesteCarro {
         }
 
 
-        /*Carro carro2 = new Carro();
+        /*br.com.localiza.concessionaria.modelo.Carro carro2 = new br.com.localiza.concessionaria.modelo.Carro();
         carro2.marca = "FIAT";
         carro2.modelo = "UNO";
         carro2.cor = "AZUL";
