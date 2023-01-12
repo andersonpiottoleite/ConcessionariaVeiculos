@@ -7,6 +7,8 @@ package br.com.localiza.concessionaria.modelo;
 // 4 - nome do projeto - concessionaria
 // 5 - nome da subdivisao - modelo
 
+import br.com.localiza.concessionaria.builder.MotoBuilder;
+
 /**
  * Essa classe representa uma moto
  *
@@ -15,7 +17,7 @@ package br.com.localiza.concessionaria.modelo;
  * @version 1.0.0
  */
 
-class Moto {
+public class Moto {
 
     /** Esse construtor privado ajudará na construção do objeto em outro construtores publicos ou default
      *
@@ -25,9 +27,9 @@ class Moto {
         this.cilindrada = cilindrada;
     }
 
-    public Moto(){
-        this(200);
+    private Moto(){
     }
+
     public Moto(String cor){
         setCor(cor);
     }
@@ -36,7 +38,7 @@ class Moto {
         setMarca(marca);
     }
 
-    public Moto(String cor, String modelo, int cilindrada, String placa, String marca, String escapamento, Double preco, int velocidadeMaxima) {
+     private Moto(String cor, String modelo, int cilindrada, String placa, String marca, String escapamento, Double preco, int velocidadeMaxima) {
         this.cor = cor;
         this.modelo = modelo;
         this.cilindrada = cilindrada;
@@ -141,4 +143,63 @@ class Moto {
     }
 
 
+    public static class MotoBuilder {
+
+        private String cor;
+
+        public String getCor(){
+            return this.cor;
+        }
+        private String modelo;
+        private int cilindrada;
+        private String placa ;
+        private String marca;
+        private String escapamento;
+        private Double preco;
+        private int velocidadeMaxima;
+
+        public MotoBuilder cor(String cor) {
+            this.cor = cor;
+            return this;
+        }
+
+        public MotoBuilder modelo(String modelo) {
+            this.modelo = modelo;
+            return this;
+        }
+
+        public MotoBuilder cilindrada(int cilindrada) {
+            this.cilindrada = cilindrada;
+            return this;
+        }
+
+        public MotoBuilder placa(String placa) {
+            this.placa = placa;
+            return this;
+        }
+
+        public MotoBuilder marca(String marca) {
+            this.marca = marca;
+            return this;
+        }
+
+        public MotoBuilder escapamento(String escapamento) {
+            this.escapamento = escapamento;
+            return this;
+        }
+
+        public MotoBuilder preco(Double preco) {
+            this.preco = preco;
+            return this;
+        }
+
+        public MotoBuilder velocidadeMaxima(int velocidadeMaxima) {
+            this.velocidadeMaxima = velocidadeMaxima;
+            return this;
+        }
+
+        public Moto build(){
+            return new Moto(cor, modelo, cilindrada, placa, marca, escapamento, preco, velocidadeMaxima);
+        }
+    }
 }

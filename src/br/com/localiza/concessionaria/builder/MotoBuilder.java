@@ -1,8 +1,14 @@
+package br.com.localiza.concessionaria.builder;
+
 import br.com.localiza.concessionaria.modelo.Moto;
 
 public class MotoBuilder {
 
     private String cor;
+
+    public String getCor(){
+        return this.cor;
+    }
     private String modelo;
     private int cilindrada;
     private String placa ;
@@ -52,7 +58,6 @@ public class MotoBuilder {
     }
 
     public Moto build(){
-        return new Moto(cor, modelo, cilindrada, placa, marca, escapamento, preco, velocidadeMaxima);
-
+        return null; //new Moto(cor, modelo, cilindrada, placa, marca, escapamento, preco, velocidadeMaxima);
     }
 }
