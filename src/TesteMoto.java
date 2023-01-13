@@ -36,7 +36,8 @@ public class TesteMoto {
         // 4 - usando o set, se torna verboso -> X
 
 
-        Scanner sc = new Scanner(System.in);
+        // teste com entrada do teclado
+        /*Scanner sc = new Scanner(System.in);
         System.out.println("informe o numero de motos que deseja cadastrar");
         int numeroDeMotos = sc.nextInt();
 
@@ -63,6 +64,8 @@ public class TesteMoto {
         for (Moto moto :motos) {
             System.out.println(moto);
         }
+         sc.close();
+        */
 
 //        Moto moto3 = new Moto.MotoBuilder()
 //                .cor("preto")
@@ -89,7 +92,7 @@ public class TesteMoto {
 //                .append("palavra 4");
 //        System.out.println(sb.toString());
 
-        sc.close();
+
     }
 
 }
