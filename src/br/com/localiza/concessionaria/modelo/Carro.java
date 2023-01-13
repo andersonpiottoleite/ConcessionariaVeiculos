@@ -3,20 +3,15 @@ package br.com.localiza.concessionaria.modelo;
 
 import br.com.localiza.concessionaria.enumerador.EnumMarca;
 
-// private - só permite que construtores, ou metodos, sejam acessados na mesma classe
-// default - só permite que classes, construtores, ou metodos, sejam acessados no mesmo pacote
-// public - permite que classes, construtores, ou metodos, sejam acessados em qualquer pacote
+// private - só permite que construtores, ou metodos, e atributos sejam acessados na mesma classe
+// default (sem modificador declarado) - só permite que classes, construtores, ou metodos e atributos, sejam acessados no mesmo pacote
+// public - permite que classes, construtores, ou metodos e atributos, sejam acessados em qualquer pacote
 // classes no pacote default (mesmo se as classes foram publicas), não podem ser acessadas fora do pacote default
 public class Carro {
 
-    Carro(){ // default
-        System.out.println("Chamando constutor default");
-    }
-    public Carro(EnumMarca marca){ // construtor de classe]
-        this.marca = marca; // sombreamento
-    }
-
     // atributos é o que uma classe TEM:
+
+    private static int quantidadeCarroCriados;
     private String motor;
     private int numeroDeRodas;
     private int anoDeFabricao;
@@ -32,6 +27,22 @@ public class Carro {
     private int velocidadeMaxima;
 
     private int velocidadeAtual;
+
+    public Carro(){
+        atualizarQuantidadeCarroCriados();
+    }
+    public Carro(EnumMarca marca){ // construtor de classe]
+        atualizarQuantidadeCarroCriados();
+        this.marca = marca; // sombreamento
+    }
+
+    private void atualizarQuantidadeCarroCriados(){
+        quantidadeCarroCriados ++;
+    }
+
+    public int getQuantidadeCarroCriados() {
+        return quantidadeCarroCriados;
+    }
 
     public void acelerar(int aumentoDeVelocidade){
         int i = velocidadeAtual + aumentoDeVelocidade;

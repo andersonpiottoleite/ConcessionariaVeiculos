@@ -27,7 +27,7 @@ public class Moto {
         this.cilindrada = cilindrada;
     }
 
-    private Moto(){
+    public Moto(){
     }
 
     public Moto(String cor){

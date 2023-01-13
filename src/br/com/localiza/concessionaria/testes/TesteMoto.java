@@ -1,4 +1,5 @@
-import br.com.localiza.concessionaria.builder.MotoBuilder;
+package br.com.localiza.concessionaria.testes;
+
 import br.com.localiza.concessionaria.modelo.Moto;
 
 import java.util.ArrayList;
@@ -66,24 +67,25 @@ public class TesteMoto {
         }
          sc.close();
         */
+        //Moto m = new Moto();
+        //Moto moto3 = m.new MotoBuilder()
+        Moto moto3 = new Moto.MotoBuilder()
+                .cor("preto")
+                .escapamento("Tunado")
+                .preco(20_000.00)
+                .velocidadeMaxima(500)
+                .marca("CBR500")
+                .cilindrada(500)
+                .placa("RRR-8575")
+                .modelo("Yamawha")
+                .build();
 
-//        Moto moto3 = new Moto.MotoBuilder()
-//                .cor("preto")
-//                .escapamento("Tunado")
-//                .preco(20_000.00)
-//                .marca("CBR500")
-//                .velocidadeMaxima(500)
-//                .cilindrada(500)
-//                .placa("RRR-8575")
-//                .modelo("Yamawha")
-//                .build();
-//
-//        System.out.println(moto3);
-//
-//        List<Moto> motos = List.of(moto3, moto3, moto3);
-//        System.out.println(motos.size());
-//
-//        System.out.println(moto3);
+        System.out.println(moto3);
+
+        List<Moto> motos = List.of(moto3, moto3, moto3);
+        System.out.println(motos.size());
+
+        System.out.println(moto3);
 //
 //        StringBuilder sb = new StringBuilder()
 //                .append("palavra1 ")
