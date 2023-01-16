@@ -12,6 +12,8 @@ public class Carro {
     // atributos é o que uma classe TEM:
 
     private static int quantidadeCarroCriados;
+
+    private String renavam;
     private String motor;
     private int numeroDeRodas;
     private int anoDeFabricao;
@@ -40,7 +42,7 @@ public class Carro {
         quantidadeCarroCriados ++;
     }
 
-    public int getQuantidadeCarroCriados() {
+    public static int getQuantidadeCarroCriados() {
         return quantidadeCarroCriados;
     }
 
@@ -194,6 +196,14 @@ public class Carro {
 
     public void setVelocidadeAtual(int velocidadeAtual) {
         this.velocidadeAtual = velocidadeAtual;
+    }
+
+    public String getRenavam() {
+        return renavam;
+    }
+
+    public void setRenavam(String renavam) {
+        this.renavam = renavam;
     }
 
     @Override

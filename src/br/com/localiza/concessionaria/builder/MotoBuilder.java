@@ -57,7 +57,7 @@ public class MotoBuilder {
         return this;
     }
 
-    public Moto build(){
+    public static Moto build(){
         return null; //new Moto(cor, modelo, cilindrada, placa, marca, escapamento, preco, velocidadeMaxima);
     }
 }

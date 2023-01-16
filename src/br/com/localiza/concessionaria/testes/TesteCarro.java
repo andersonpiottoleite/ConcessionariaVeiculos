@@ -2,8 +2,10 @@ package br.com.localiza.concessionaria.testes;
 
 import br.com.localiza.concessionaria.enumerador.EnumMarca;
 import br.com.localiza.concessionaria.modelo.Carro;
+import br.com.localiza.concessionaria.util.ValidadorRenavam;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class TesteCarro {
@@ -20,8 +22,23 @@ public class TesteCarro {
 
         Carro carro3 = new Carro(EnumMarca.MERCEDES);
 
-        int qtde = carro3.getQuantidadeCarroCriados();
+        int qtde = carro1.getQuantidadeCarroCriados();
         System.out.println(qtde); // ?
+
+        int qtde2 = Carro.getQuantidadeCarroCriados(); // quando costuma ser usado um metodo static?
+        // quando temos:
+        //  - static factory method  - metodo de fabrica de objetos
+        // - metodos utilitarios
+
+        Calendar instance = Calendar.getInstance();
+        //CarroFactory.getInstance(EnumTipoCarro.TUNADO);
+        //CarroFactory.getInstance(EnumTipoCarro.ESPORTIVO);
+
+        System.out.println(qtde2);
+
+        carro3.setRenavam("123456789-89");
+        ValidadorRenavam.validaRenavam(carro3.getRenavam());
+        // seguir o fluxo
 
         //carro1.numeroDeRodas = -50; // forte acoplamento, a classe br.com.localiza.concessionaria.testes.TesteCarro sabe alem do que deveria saber sobre o carro
 //        carro1.setModelo("Sedan");

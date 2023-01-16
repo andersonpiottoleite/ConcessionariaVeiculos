@@ -1,5 +1,6 @@
 package br.com.localiza.concessionaria.testes;
 
+import br.com.localiza.concessionaria.modelo.Carro;
 import br.com.localiza.concessionaria.modelo.Moto;
 
 import java.util.ArrayList;
@@ -38,7 +39,7 @@ public class TesteMoto {
 
 
         // teste com entrada do teclado
-        /*Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("informe o numero de motos que deseja cadastrar");
         int numeroDeMotos = sc.nextInt();
 
@@ -66,7 +67,7 @@ public class TesteMoto {
             System.out.println(moto);
         }
          sc.close();
-        */
+
         //Moto m = new Moto();
         //Moto moto3 = m.new MotoBuilder()
         Moto moto3 = new Moto.MotoBuilder()
@@ -82,8 +83,8 @@ public class TesteMoto {
 
         System.out.println(moto3);
 
-        List<Moto> motos = List.of(moto3, moto3, moto3);
-        System.out.println(motos.size());
+        List<Moto> motos2 = List.of(moto3, moto3, moto3);
+        System.out.println(motos2.size());
 
         System.out.println(moto3);
 //
