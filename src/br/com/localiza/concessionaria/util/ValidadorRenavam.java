@@ -12,20 +12,4 @@ public class ValidadorRenavam {
         }
         return true;
     }
-
-    public static void main(String[] args) {
-
-        String nula = null;
-        String vazia = new String("");
-
-
-        if (Objects.isNull(nula)){
-            System.out.println("é null");
-        }
-
-
-        if (nula.isEmpty()){
-            System.out.println("é vazia");
-        }
-    }
 }

@@ -49,9 +49,12 @@ public class TesteMoto {
             System.out.println("informe a cor");
             String cor = sc.next();
 
+            System.out.println("informe a o escapamento");
+            String escapamento = sc.next();
+
             Moto moto = new Moto.MotoBuilder()
                     .cor(cor)
-                    .escapamento("Tunado")
+                    .escapamento(escapamento)
                     .preco(20_000.00)
                     .marca("CBR500")
                     .velocidadeMaxima(500)
@@ -70,7 +73,7 @@ public class TesteMoto {
 
         //Moto m = new Moto();
         //Moto moto3 = m.new MotoBuilder()
-        Moto moto3 = new Moto.MotoBuilder()
+        /*Moto moto3 = new Moto.MotoBuilder()
                 .cor("preto")
                 .escapamento("Tunado")
                 .preco(20_000.00)
@@ -86,7 +89,7 @@ public class TesteMoto {
         List<Moto> motos2 = List.of(moto3, moto3, moto3);
         System.out.println(motos2.size());
 
-        System.out.println(moto3);
+        System.out.println(moto3);*/
 //
 //        StringBuilder sb = new StringBuilder()
 //                .append("palavra1 ")
