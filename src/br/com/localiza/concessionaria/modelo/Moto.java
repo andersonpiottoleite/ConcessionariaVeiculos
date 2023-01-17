@@ -50,6 +50,8 @@ public class Moto {
         this.velocidadeMaxima = velocidadeMaxima;
     }
 
+    private String chassi;
+
     private String cor;
 
     private String modelo;
@@ -129,6 +131,14 @@ public class Moto {
         return velocidadeMaxima;
     }
 
+    public String getChassi() {
+        return chassi;
+    }
+
+    public void setChassi(String chassi) {
+        this.chassi = chassi;
+    }
+
     @Override
     public String toString() {
         return "br.com.localiza.concessionaria.modelo.Moto{" +
@@ -146,6 +156,8 @@ public class Moto {
 
     public static class MotoBuilder {
 
+        private String chassi;
+
         private String cor;
 
         public String getCor(){
@@ -158,6 +170,11 @@ public class Moto {
         private String escapamento;
         private Double preco;
         private int velocidadeMaxima;
+
+        public MotoBuilder chassi(String chassi) {
+            this.chassi = chassi;
+            return this;
+        }
 
         public MotoBuilder cor(String cor) {
             this.cor = cor;

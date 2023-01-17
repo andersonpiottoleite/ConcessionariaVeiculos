@@ -2,6 +2,7 @@ package br.com.localiza.concessionaria.testes;
 
 import br.com.localiza.concessionaria.modelo.Carro;
 import br.com.localiza.concessionaria.modelo.Moto;
+import br.com.localiza.concessionaria.util.ValidadorChassi;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +40,7 @@ public class TesteMoto {
 
 
         // teste com entrada do teclado
-        Scanner sc = new Scanner(System.in);
+       /* Scanner sc = new Scanner(System.in);
         System.out.println("informe o numero de motos que deseja cadastrar");
         int numeroDeMotos = sc.nextInt();
 
@@ -69,11 +70,11 @@ public class TesteMoto {
         for (Moto moto :motos) {
             System.out.println(moto);
         }
-         sc.close();
+         sc.close();*/
 
         //Moto m = new Moto();
         //Moto moto3 = m.new MotoBuilder()
-        /*Moto moto3 = new Moto.MotoBuilder()
+        Moto moto3 = new Moto.MotoBuilder()
                 .cor("preto")
                 .escapamento("Tunado")
                 .preco(20_000.00)
@@ -82,10 +83,13 @@ public class TesteMoto {
                 .cilindrada(500)
                 .placa("RRR-8575")
                 .modelo("Yamawha")
+                .chassi("5025050505")
                 .build();
 
         System.out.println(moto3);
 
+        ValidadorChassi.validaChassi(moto3.getChassi());
+/*
         List<Moto> motos2 = List.of(moto3, moto3, moto3);
         System.out.println(motos2.size());
 
@@ -97,8 +101,6 @@ public class TesteMoto {
 //                .append("palavra 3")
 //                .append("palavra 4");
 //        System.out.println(sb.toString());
-
-
     }
 
 }
