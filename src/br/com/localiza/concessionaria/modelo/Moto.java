@@ -8,6 +8,7 @@ package br.com.localiza.concessionaria.modelo;
 // 5 - nome da subdivisao - modelo
 
 import br.com.localiza.concessionaria.builder.MotoBuilder;
+import br.com.localiza.concessionaria.enumerador.EnumMarcaMoto;
 
 /**
  * Essa classe representa uma moto
@@ -18,7 +19,12 @@ import br.com.localiza.concessionaria.builder.MotoBuilder;
  * 
  */
 
-public class Moto {
+//Moto É UM veiculo? Sim -> herança adequada
+
+public class Moto extends Veiculo{
+    private int cilindrada;
+    private EnumMarcaMoto marca;
+    private String escapamento;
 
     /** Esse construtor privado ajudará na construção do objeto em outro construtores publicos ou default
      *
@@ -34,12 +40,13 @@ public class Moto {
     public Moto(String cor){
         setCor(cor);
     }
-    public Moto(String modelo, String marca){ // sobrecarga de construtores
+    public Moto(String modelo, EnumMarcaMoto marca){ // sobrecarga de construtores
         setModelo(modelo);
         setMarca(marca);
     }
 
-     private Moto(String cor, String modelo, int cilindrada, String placa, String marca, String escapamento, Double preco, int velocidadeMaxima) {
+    private Moto(String renavam, String cor, String modelo, int cilindrada, String placa, EnumMarcaMoto marca, String escapamento, Double preco, int velocidadeMaxima) {
+        this.renavam = renavam;
         this.cor = cor;
         this.modelo = modelo;
         this.cilindrada = cilindrada;
@@ -50,36 +57,13 @@ public class Moto {
         this.velocidadeMaxima = velocidadeMaxima;
     }
 
-    private String chassi;
-
-    private String cor;
-
-    private String modelo;
-
-    private int cilindrada;
-    private String placa ;
-    private String marca;
-    private String escapamento;
-    private Double preco;
-    private int velocidadeMaxima;
-
-    public void setCor(String cor) {
-        this.cor = cor;
-    }
-
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
 
     public void setCilindrada(int cilindrada) {
         this.cilindrada = cilindrada;
     }
 
-    public void setPlaca(String placa) {
-        this.placa = placa;
-    }
 
-    public void setMarca(String marca) {
+    public void setMarca(EnumMarcaMoto marca) {
         this.marca = marca;
     }
 
@@ -87,35 +71,11 @@ public class Moto {
         this.escapamento = escapamento;
     }
 
-    public void setPreco(Double preco) {
-        this.preco = preco;
-    }
-
-    public void setVelocidadeMaxima(int velocidadeMaxima) {
-        this.velocidadeMaxima = velocidadeMaxima;
-    }
-
-    /** Metodo para obter a placa da moto
-     *
-     * @return String placa - uma placa do tipo String
-     */
-    public String getPlaca() {
-        return this.placa;
-    }
-
-    public String getCor() {
-        return this.cor;
-    }
-
-    public String getModelo() {
-        return modelo;
-    }
-
     public int getCilindrada() {
         return cilindrada;
     }
 
-    public String getMarca() {
+    public EnumMarcaMoto getMarca() {
         return marca;
     }
 
@@ -123,26 +83,12 @@ public class Moto {
         return escapamento;
     }
 
-    public Double getPreco() {
-        return preco;
-    }
-
-    public int getVelocidadeMaxima() {
-        return velocidadeMaxima;
-    }
-
-    public String getChassi() {
-        return chassi;
-    }
-
-    public void setChassi(String chassi) {
-        this.chassi = chassi;
-    }
 
     @Override
     public String toString() {
         return "br.com.localiza.concessionaria.modelo.Moto{" +
-                "cor='" + cor + '\'' +
+                "renavan='" + renavam + '\'' +
+                ", cor='" + cor + '\'' +
                 ", modelo='" + modelo + '\'' +
                 ", cilindrada=" + cilindrada +
                 ", placa='" + placa + '\'' +
@@ -153,23 +99,29 @@ public class Moto {
                 '}';
     }
 
+    @Override
+    public String getTipoCambio() {
+        return "automatico";
+    }
+
 
     public static class MotoBuilder {
 
+        private String renavam;
         private String chassi;
-
         private String cor;
-
-        public String getCor(){
-            return this.cor;
-        }
         private String modelo;
         private int cilindrada;
         private String placa ;
-        private String marca;
+        private EnumMarcaMoto marca;
         private String escapamento;
         private Double preco;
         private int velocidadeMaxima;
+
+        public MotoBuilder renavam(String renavam) {
+            this.renavam = renavam;
+            return this;
+        }
 
         public MotoBuilder chassi(String chassi) {
             this.chassi = chassi;
@@ -196,7 +148,7 @@ public class Moto {
             return this;
         }
 
-        public MotoBuilder marca(String marca) {
+        public MotoBuilder marca(EnumMarcaMoto marca) {
             this.marca = marca;
             return this;
         }
@@ -217,7 +169,7 @@ public class Moto {
         }
 
         public Moto build(){
-            return new Moto(cor, modelo, cilindrada, placa, marca, escapamento, preco, velocidadeMaxima);
+            return new Moto(renavam, cor, modelo, cilindrada, placa, marca, escapamento, preco, velocidadeMaxima);
         }
     }
 }

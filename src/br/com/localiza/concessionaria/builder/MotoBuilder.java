@@ -5,10 +5,6 @@ import br.com.localiza.concessionaria.modelo.Moto;
 public class MotoBuilder {
 
     private String cor;
-
-    public String getCor(){
-        return this.cor;
-    }
     private String modelo;
     private int cilindrada;
     private String placa ;
@@ -57,7 +53,7 @@ public class MotoBuilder {
         return this;
     }
 
-    public static Moto build(){
-        return null; //new Moto(cor, modelo, cilindrada, placa, marca, escapamento, preco, velocidadeMaxima);
+    public Moto build(){
+        return null; // construtor private em moto, inacessivel: new Moto(cor, modelo, cilindrada, placa, marca, escapamento, preco, velocidadeMaxima);
     }
 }

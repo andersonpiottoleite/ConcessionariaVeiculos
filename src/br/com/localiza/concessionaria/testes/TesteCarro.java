@@ -1,12 +1,11 @@
 package br.com.localiza.concessionaria.testes;
 
-import br.com.localiza.concessionaria.enumerador.EnumMarca;
+import br.com.localiza.concessionaria.enumerador.EnumMarcaCarro;
 import br.com.localiza.concessionaria.modelo.Carro;
+import br.com.localiza.concessionaria.modelo.Veiculo;
 import br.com.localiza.concessionaria.util.ValidadorRenavam;
 
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 
 public class TesteCarro {
 
@@ -18,11 +17,12 @@ public class TesteCarro {
     public static void main(String[] args) {
         Carro carro1 = new Carro();
 
-        Carro carro2 = new Carro(EnumMarca.MERCEDES);
+        Carro carro2 = new Carro(EnumMarcaCarro.MERCEDES);
 
-        Carro carro3 = new Carro(EnumMarca.MERCEDES);
+        Carro carro3 = new Carro(EnumMarcaCarro.MERCEDES);
 
         int qtde = carro1.getQuantidadeCarroCriados();
+
         System.out.println(qtde); // ?
 
         int qtde2 = Carro.getQuantidadeCarroCriados(); // quando costuma ser usado um metodo static?
@@ -102,5 +102,11 @@ public class TesteCarro {
         Calendar instance = Calendar.getInstance(local);
         System.out.println(instance);
         System.out.println(instance.getTime());*/
+
+        System.out.println(carro3.getTipoCambio());
+        System.out.println(carro3.getMotor());
+        // scanner dkpdfgkpod
+        Carro carroVerde = new Carro("Verde");
+        System.out.println(carroVerde);
     }
 }

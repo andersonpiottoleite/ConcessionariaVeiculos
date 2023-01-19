@@ -3,7 +3,9 @@ package exemplo.heranca;
 // Classe Pai
 // Classe Mãe
 // Super Classe
-public class ClassePai {
+
+// classe asbtrata
+public abstract class ClassePai {
 
     private String atributo1;
 
@@ -24,6 +26,8 @@ public class ClassePai {
     protected void setAtributo2(String atributo2) {
         this.atributo2 = atributo2;
     }
+
+    protected abstract void metodo(String atributo2);
 
     public static class TesteFamilia {
 

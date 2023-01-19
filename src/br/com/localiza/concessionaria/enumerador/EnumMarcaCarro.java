@@ -1,6 +1,6 @@
 package br.com.localiza.concessionaria.enumerador;
 
-public enum EnumMarca {
+public enum EnumMarcaCarro {
 
     FORD,
     FIAT,

@@ -1,39 +1,33 @@
 package br.com.localiza.concessionaria.modelo;
 
 
-import br.com.localiza.concessionaria.enumerador.EnumMarca;
+import br.com.localiza.concessionaria.enumerador.EnumMarcaCarro;
 
 // private - só permite que construtores, ou metodos, e atributos sejam acessados na mesma classe
 // default (sem modificador declarado) - só permite que classes, construtores, ou metodos e atributos, sejam acessados no mesmo pacote
 // public - permite que classes, construtores, ou metodos e atributos, sejam acessados em qualquer pacote
 // classes no pacote default (mesmo se as classes foram publicas), não podem ser acessadas fora do pacote default
-public class Carro {
+
+//Carro É UM veiculo? Sim -> herança adequada
+public class Carro extends Veiculo{
 
     // atributos é o que uma classe TEM:
 
     private static int quantidadeCarroCriados;
-
-    private String renavam;
-    private String motor;
     private int numeroDeRodas;
-    private int anoDeFabricao;
-    private String cor;
-
-    private EnumMarca marca;
-
-    private String modelo;
-    private String estiloDeCombustivel;
-    private double preco;
-    private int aroRoda;
-    private String dono;
-    private int velocidadeMaxima;
-
+    private EnumMarcaCarro marca;
     private int velocidadeAtual;
 
+    public Carro(String cor){
+        super(cor);
+        System.out.println("Chamando o  construtor da classe filha");
+    }
+
     public Carro(){
+        System.out.println("Chamando o construtor sem param da classe filha");
         atualizarQuantidadeCarroCriados();
     }
-    public Carro(EnumMarca marca){ // construtor de classe]
+    public Carro(EnumMarcaCarro marca){ // construtor de classe]
         atualizarQuantidadeCarroCriados();
         this.marca = marca; // sombreamento
     }
@@ -110,84 +104,12 @@ public class Carro {
         return numeroDeRodas;
     }
 
-    public String getMotor() {
-        return motor;
-    }
-
-    public void setMotor(String motor) {
-        this.motor = motor;
-    }
-
-    public int getAnoDeFabricao() {
-        return anoDeFabricao;
-    }
-
-    public void setAnoDeFabricao(int anoDeFabricao) {
-        this.anoDeFabricao = anoDeFabricao;
-    }
-
-    public String getCor() {
-        return cor;
-    }
-
-    public void setCor(String cor) {
-        this.cor = cor;
-    }
-
-    public EnumMarca getMarca() {
+    public EnumMarcaCarro getMarca() {
         return marca;
     }
 
-    public void setMarca(EnumMarca marca) {
+    public void setMarca(EnumMarcaCarro marca) {
         this.marca = marca;
-    }
-
-    public String getModelo() {
-        return modelo;
-    }
-
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-
-    public String getEstiloDeCombustivel() {
-        return estiloDeCombustivel;
-    }
-
-    public void setEstiloDeCombustivel(String estiloDeCombustivel) {
-        this.estiloDeCombustivel = estiloDeCombustivel;
-    }
-
-    public double getPreco() {
-        return preco;
-    }
-
-    public void setPreco(double preco) {
-        this.preco = preco;
-    }
-
-    public int getAroRoda() {
-        return aroRoda;
-    }
-
-    public void setAroRoda(int aroRoda) {
-        this.aroRoda = aroRoda;
-    }
-
-    public String getDono() {
-        return dono;
-    }
-
-    public void setDono(String dono) {
-        this.dono = dono;
-    }
-
-    public int getVelocidadeMaxima() {
-        return velocidadeMaxima;
-    }
-
-    public void setVelocidadeMaxima(int velocidadeMaxima) {
-        this.velocidadeMaxima = velocidadeMaxima;
     }
 
     public int getVelocidadeAtual() {
@@ -196,14 +118,6 @@ public class Carro {
 
     public void setVelocidadeAtual(int velocidadeAtual) {
         this.velocidadeAtual = velocidadeAtual;
-    }
-
-    public String getRenavam() {
-        return renavam;
-    }
-
-    public void setRenavam(String renavam) {
-        this.renavam = renavam;
     }
 
     @Override
@@ -222,5 +136,16 @@ public class Carro {
                 ", velocidadeMaxima=" + velocidadeMaxima +
                 ", velocidadeAtual=" + velocidadeAtual +
                 '}';
+    }
+
+    @Override // sobrescrito de metodo abstrato
+    public String getTipoCambio() {
+        return "Manual";
+    }
+
+    @Override // sobrescita de metodo
+    public String getMotor() {
+        System.out.println("Chamando de Carro");
+        return super.getMotor();
     }
 }

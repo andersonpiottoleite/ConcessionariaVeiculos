@@ -1,5 +1,6 @@
 package br.com.localiza.concessionaria.testes;
 
+import br.com.localiza.concessionaria.enumerador.EnumMarcaMoto;
 import br.com.localiza.concessionaria.modelo.Carro;
 import br.com.localiza.concessionaria.modelo.Moto;
 import br.com.localiza.concessionaria.util.ValidadorChassi;
@@ -79,11 +80,12 @@ public class TesteMoto {
                 .escapamento("Tunado")
                 .preco(20_000.00)
                 .velocidadeMaxima(500)
-                .marca("CBR500")
+                .marca(EnumMarcaMoto.YAMAHA)
                 .cilindrada(500)
                 .placa("RRR-8575")
                 .modelo("Yamawha")
                 .chassi("5025050505")
+                .renavam("45456456")
                 .build();
 
         System.out.println(moto3);
@@ -101,6 +103,8 @@ public class TesteMoto {
 //                .append("palavra 3")
 //                .append("palavra 4");
 //        System.out.println(sb.toString());
+
+        System.out.println(moto3.getTipoCambio());
     }
 
 }
