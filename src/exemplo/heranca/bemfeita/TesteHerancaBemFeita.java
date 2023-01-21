@@ -3,7 +3,7 @@ package exemplo.heranca.bemfeita;
 public class TesteHerancaBemFeita {
 
     public static void main(String[] args) {
-        PessoaFisica pf = new PessoaFisica();
+        Pessoa pf = new PessoaFisica();
         pf.setEmail("xxpf@gmail.com");
         System.out.println(pf.getEmail());
 
